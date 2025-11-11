@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./assets/styles/general.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./assets/styles/registrarEntrada.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <aside>
+        <a href="./INDEX.php">
+            <button type="submit" class="button background-blue-color-white">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </button>
+        </a>
+
+        <a href="./Screens/registrarEntradas.php">
+            <button type="submit" class="button">
+                <i class="fa-solid fa-car-side"></i>
+                Registrar Entrada
+            </button>
+        </a>
+
+        <a href="./Screens/registrarSalidas.php">
+            <button type="submit" class="button">
+                <i class="fa-solid fa-car-side"></i>
+                Registrar Salida
+            </button>
+        </a>
+
+        <a href="./Screens/tarifas.php">
+            <button type="submit" class="button">
+                <i class="fa-solid fa-money-bill-1-wave"></i>
+                Tarifas
+            </button>
+        </a>
+    </aside>
+
+    <div class="main">
+        <H2>Bienvenido</H2>
+    </div>  
+</body>
+</html>
