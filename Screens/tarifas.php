@@ -56,6 +56,9 @@
             </button>
         </form>
         <br>
+        <H2>Eliminar una Tarifa</H2>
+
+        <br>
         <button class="enviar-Button" onclick="location.reload();">Actualizar</button>
         <div class="tarifas_container">
                 <?php
@@ -76,8 +79,8 @@
                             echo "
                             <div class='tarjeta'>
                                 <h2>" . $row['tipo_vehiculo'] . "</h2>
-                                <p>Precio por hora: " . $row['tarifa'] . "</p>
-                                <p>ID: " . $row['id'] . ' ' .'$' . "</p>
+                                <p>Precio por hora: " . $row['tarifa'] . '$' .  "</p>
+                                <p>ID: " . $row['id'] ."</p>
                                 <form action='../php/registrarTarifas.php' method='post'>
                                     <input type='hidden' name='id' value='" . $row['id'] . "'>
                                     <input type='number' name='nuevo_precio' placeholder='Actualizar Precio' >

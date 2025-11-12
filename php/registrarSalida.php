@@ -23,12 +23,30 @@
 
     if($horaDeSalida_Fecha < $horaDeEntrada_Fecha){
          echo "<script>alert('No puedes seleccionar una fecha anterior a la fecha registrada. '); window.history.back();</script>";
-    }else if{
+    }else{
+        $tipoVehiculo_Consulta = $conexion->query("SELECT tipo_vehiculo FROM vehiculos WHERE id = '$id'");
+        $tipoVehiculo_Objeto = $tipoVehiculo_Consulta->fetch_assoc();
+        $vehiculo = $tipoVehiculo_Objeto['tipo_vehiculo'];
+
+        $tarifa_Consulta = $conexion->query("SELECT tarifa FROM tarifas WHERE tipo_vehiculo = '$vehiculo'");
+        $tarifa_Objeto = $tarifa_Consulta->fetch_assoc();
+        $tarifa = $tarifa_Objeto['tarifa'];
 
         $diferencia = date_diff($horaDenEntrada_Objeto,$horaDeSalida_Objeto);
         $tiempoTotal = $diferencia->format('%a dias %H horas %I minutos');
         $tiempoEnEstacionamiento = "UPDATE vehiculos_sin_pagar SET tiempo_en_estacionamiento = '$tiempoTotal' WHERE id_vehiculo = '$id'";
         $conexion->query($tiempoEnEstacionamiento);
+
+        $dias = $diferencia->days;
+        $horas = $diferencia->h;
+        $min = $diferencia->i;
+
+        $tiempoTotal_en_Horas = ($dias * 24) + ($horas) + ($min / 60);
+        $tarifa_Completa = $tiempoTotal_en_Horas * $tarifa ;
+
+        $subirTarifas_Consulta = "UPDATE vehiculos_sin_pagar SET tarifa = '$tarifa_Completa' WHERE id_vehiculo = '$id'";
+        $conexion->query($subirTarifas_Consulta);
+
 
         $update = "UPDATE vehiculos_sin_pagar SET horaSalida = '$horaDeSalida' WHERE id_vehiculo = '$id'"; //Consulta que actualiza la columna horaSalida en la tabla vehiculos_sin_pagar
     
