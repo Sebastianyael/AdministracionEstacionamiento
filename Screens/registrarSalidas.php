@@ -1,4 +1,7 @@
-
+<?php
+    require '../components/header.php';
+    require '../components/aside.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,45 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-
-    </header>
-
-    <aside>
-        <a href="../INDEX.php">
-            <button type="submit" class="button">
-                <i class="fa-solid fa-house"></i>
-                Inicio
-            </button>
-        </a>
-
-        <a href="../Screens/registrarEntradas.php">
-            <button type="submit" class="button">
-                <i class="fa-solid fa-car-side"></i>
-                Registrar Entrada
-            </button>
-        </a>
-
-        <a href="../Screens/registrarSalidas.php">
-            <button type="submit" class="button background-blue-color-white">
-                <i class="fa-solid fa-car-side"></i>
-                Registrar Salida
-            </button>
-        </a>
-
-        <a href="../Screens/tarifas.php">
-            <button type="submit" class="button">
-                <i class="fa-solid fa-money-bill-1-wave"></i>
-                Tarifas
-            </button>
-        </a>
-    </aside>
-
     <div class="main">
         <H2>Registrar Salida de Vehiculo</H2>
 
         <br>
-        <form action="../php/registrarSalida.php" method="post" class="formulario-para-registrar-salida">
+        <form action="../php/CRUDSalida_de_Vehiculos/registrarSalida.php" method="post" class="formulario-para-registrar-salida">
             <input type="text" name="id"  placeholder="Id del registro">
         
             <input type="datetime-local" name="Hora_de_Salida" placeholder="Hora de salida">
@@ -62,17 +31,7 @@
         <button class="enviar-Button" onclick="location.reload();">Actualizar</button>
         <div class="div-carros-regitrados">
             <?php
-               $HOST = 'localhost';
-                $USERNAME = 'root';
-                $PASSWORD = '';
-                $DBNAME = 'estacionamiento';
-
-                $conexion = new mysqli($HOST, $USERNAME, $PASSWORD, $DBNAME);
-
-                if ($conexion->connect_error) {
-                    die("Conexión Fallida: " . $conexion->connect_error);
-                }
-
+                require '../bd/ConexionBD.php';
                 $seleccion = "SELECT id,dueno, placa, hora_entrada,horaSalida, tipo_vehiculo, espacio_asignado, persona_en_turno,tarifa FROM vista_completa";
                 $result_select = $conexion->query($seleccion);
 
@@ -88,7 +47,6 @@
                                 <th>Hora de Salida</th>
                                 <th>Tipo de Vehículo</th>
                                 <th>Espacio Asignado</th>
-                                <th>Persona en Turno</th>
                                 <th>Tarifa</th>
                             </tr>";
 
@@ -101,8 +59,7 @@
                                 <td>" . $row["horaSalida"] . "</td>
                                 <td>" . $row["tipo_vehiculo"] . "</td>
                                 <td>" . $row["espacio_asignado"] . "</td>
-                                <td>" . $row["persona_en_turno"] . "</td>
-                                <td>" . $row["tarifa"] . "</td>
+                                <td>" . $row["tarifa"] . ' '  . 'MXN' ."</td>
                                 
                             </tr>";
                     }

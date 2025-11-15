@@ -8,6 +8,8 @@
     $horaDeSalida = $_POST['Hora_de_Salida']; //recibe la hora de salida desde el formulario
     $horaDeSalida_Objeto = new DateTime($horaDeSalida); //objeto de la hora de salida
     $horaDeSalida_Fecha = $horaDeSalida_Objeto->format('Y-m-d'); //fecha de la hora de salida
+    $horaDeSalida_Hora = $horaDeSalida_Objeto->format('%H');
+    $horaDeSalida_Min = $horaDeSalida_Objeto->format('%I');
 
     $conexion = new mysqli($HOST,$USERNAME,$PASSWORD,$DBNAME); //hace una nueva conexion con la bd
     if($conexion -> connect_error){ //Verifica si ha ocurrido un error durante la conexion con la bd
@@ -20,8 +22,10 @@
     $horaDeEntrada = $fila['hora_entrada']; //hora de entrada
     $horaDenEntrada_Objeto = new DateTime($horaDeEntrada); //objeto de la hora de entrada
     $horaDeEntrada_Fecha = $horaDenEntrada_Objeto->format('Y-m-d'); //fecha de la hora de salida
-
-    if($horaDeSalida_Fecha < $horaDeEntrada_Fecha){
+    $horaDeEntrada_Hora = $horaDenEntrada_Objeto->format('%H');
+    $horaDeEntrada_Min = $horaDenEntrada_Objeto->format('%I');
+    
+    if($horaDeSalida_Fecha < $horaDenEntrada_Fecha || $horaDeSalida_Hora < $horaDeEntrada_Hora || $horaDeSalida_Min < $horaDeEntrada_Min){
          echo "<script>alert('No puedes seleccionar una fecha anterior a la fecha registrada. '); window.history.back();</script>";
     }else{
         $tipoVehiculo_Consulta = $conexion->query("SELECT tipo_vehiculo FROM vehiculos WHERE id = '$id'");

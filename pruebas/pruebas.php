@@ -1,23 +1,12 @@
 <?php
-    $HOST = 'localhost';
-    $USERNAME = 'root';
-    $PASSWORD = '';
-    $DBNAME = 'estacionamiento';
+   
+    $id = $_POST['id'];
+    // $dueño = $_POST['propietario'];
+    // $placa = $_POST['placa'];
+    // $hora_Entrada = $_POST['hora_entrada'];
+    // $tipo_Vehiculo = $_POST['tipo_vehiculo'];
+    // $espacio_asignado = $_POST['espacio_asignado'];
 
-    $conexion = new mysqli($HOST,$USERNAME,$PASSWORD,$DBNAME); //hace una nueva conexion con la bd
-    if($conexion -> connect_error){ //Verifica si ha ocurrido un error durante la conexion con la bd
-        die("Conexion Fallida: ".$conexion->connect_error); 
-    }
-
-    $id = 31;
-
-    $tipoVehiculo_Consulta = $conexion->query("SELECT tipo_vehiculo FROM vehiculos WHERE id = '$id'");
-    $tipoVehiculo_Objeto = $tipoVehiculo_Consulta->fetch_assoc();
-    $vehiculo = $tipoVehiculo_Objeto['tipo_vehiculo'];
-    echo "<br>$vehiculo</br>";
-
-    $tarifa_Consulta = $conexion->query("SELECT tarifa FROM tarifas WHERE tipo_vehiculo = '$vehiculo'");
-    $tarifa_Objeto = $tarifa_Consulta->fetch_assoc();
-    $tarifa = $tarifa_Objeto['tarifa'];
-    echo "<br>$tarifa</br>";
+    echo '<br>' . $id . '</br>';
+    
 ?>
