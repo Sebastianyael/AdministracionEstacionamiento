@@ -9,8 +9,7 @@
     $horaEntrada = $_POST['horaEntrada'];
     $tipoVehiculo = $_POST['tipoVehiculo'];
     $espacioAsignado = $_POST['espacioAsignado'];
-    $personaTurno = $_POST['personaTurno'];
-    $estado = $_POST['estado'];
+    
 
     $conexion = new mysqli($HOST,$USERNAME,$PASSWORD,$DBNAME);
 
@@ -18,8 +17,8 @@
         die("Conexion Fallida: ".$conexion->connect_error);
     }
 
-    $insertar  = "INSERT INTO vehiculos (dueno,placa,hora_entrada,tipo_vehiculo,espacio_asignado,persona_en_turno,estado)
-    VALUES('$propietario','$placa','$horaEntrada','$tipoVehiculo','$espacioAsignado','$personaTurno','$estado')";
+    $insertar  = "INSERT INTO vehiculos (dueno,placa,hora_entrada,tipo_vehiculo,espacio_asignado)
+    VALUES('$propietario','$placa','$horaEntrada','$tipoVehiculo','$espacioAsignado')";
 
 
 if($conexion -> query($insertar) === TRUE){

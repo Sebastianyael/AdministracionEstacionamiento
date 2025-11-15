@@ -52,18 +52,18 @@
     display: flex;
     padding: 10px;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
 }
 
     .tarjeta{
         width: 20%;
-        height: 30vh;
+        height: 31vh;
         padding: 5px;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         border-radius: 20px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         transition: 0.4s ease all;
@@ -90,7 +90,7 @@
 
     .tarjeta button{
         width: 40%;
-        height: 3vh;
+        height: 4vh;
         border: none;
         border-radius: 10px;
         background-color: var(--button-color);
@@ -114,3 +114,16 @@
         transform: translateY(-10px);
         
     }
+.registrar_Tarifa{
+    background-color: var(--button-color);
+    color: white;
+}
+
+.eliminar-tarifa-button{
+    width: 40% !important;
+    height: 4vh !important;
+    border-radius: 20px !important;
+    background-color: red !important;
+    color: white !important;
+    
+}

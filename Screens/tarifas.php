@@ -1,4 +1,8 @@
-
+<?php
+    require '../components/header.php';
+    require '../components/aside.php';
+    require '../bd/ConexionBD.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,44 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-
-    </header>
-
-    <aside>
-        <a href="../INDEX.php">
-            <button type="submit" class="button">
-                <i class="fa-solid fa-house"></i>
-                Inicio
-            </button>
-        </a>
-
-        <a href="../Screens/registrarEntradas.php">
-            <button type="submit" class="button">
-                <i class="fa-solid fa-car-side"></i>
-                Registrar Entrada
-            </button>
-        </a>
-
-        <a href="../Screens/registrarSalidas.php">
-            <button type="submit" class="button">
-                <i class="fa-solid fa-car-side"></i>
-                Registrar Salida
-            </button>
-        </a>
-
-        <a href="../Screens/tarifas.php">
-            <button type="submit" class="button background-blue-color-white">
-                <i class="fa-solid fa-money-bill-1-wave"></i>
-                Tarifas
-            </button>
-        </a>
-    </aside>
-
     <div class="main">
         <H2>Administrar Tarifas</H2>
          <br>
-        <form action="../php/registrarTarifas.php" method="post" class="formulario-para-asignar-tarifas">
+        <form action="../php/CRUDTarifas/registrarTarifas.php" method="post" class="formulario-para-asignar-tarifas">
             <input type="text" name="vehiculo" id="" placeholder="Vehiculo" required>
             <input type="number" name="Precio_por_Hora" id="" placeholder="Precio por Hora" required>
             <button class="enviar-Button" type="submit" >
@@ -56,19 +26,10 @@
             </button>
         </form>
         <br>
+        <br>
         <button class="enviar-Button" onclick="location.reload();">Actualizar</button>
         <div class="tarifas_container">
                 <?php
-                    $HOST = 'localhost';
-                    $USERNAME = 'root';
-                    $PASSWORD = '';
-                    $DBNAME = 'estacionamiento';
-
-                    $conexion = new mysqli($HOST, $USERNAME, $PASSWORD, $DBNAME);
-                        if ($conexion->connect_error) {
-                        die("Conexión Fallida: " . $conexion->connect_error);
-                    }
-
                     $seleccion = "SELECT id,tipo_vehiculo,tarifa FROM tarifas";
                     $result_select = $conexion->query($seleccion);
                      if($result_select->num_rows > 0){
@@ -76,13 +37,22 @@
                             echo "
                             <div class='tarjeta'>
                                 <h2>" . $row['tipo_vehiculo'] . "</h2>
-                                <p>Precio por hora: " . $row['tarifa'] . "</p>
-                                <p>ID: " . $row['id'] . ' ' .'$' . "</p>
-                                <form action='../php/registrarTarifas.php' method='post'>
+                                <p>Precio por hora: " . $row['tarifa'] . '$' .  "</p>
+                                
+                                <form action='../php/CRUDTarifas/actualizarTarifa.php' method='post'>
                                     <input type='hidden' name='id' value='" . $row['id'] . "'>
-                                    <input type='number' name='nuevo_precio' placeholder='Actualizar Precio' >
+                                    <input type='number' name='nuevo_precio' placeholder='Actualizar Tarifa' >
                                     <button type='submit'>Actualizar</button>
                                 </form>
+
+                                <form action='../php/CRUDTarifas/eliminarTarifa.php' method='post'>
+                                    <input type='hidden' name='id' value='" . $row['id'] . "'>
+                                    <button type='submit' class='eliminar-tarifa-button'>
+                                        <i class='fa-solid fa-trash'></i>
+                                        Eliminar
+                                    </button>
+                                </form>
+
                             </div>
                             ";
                         }
