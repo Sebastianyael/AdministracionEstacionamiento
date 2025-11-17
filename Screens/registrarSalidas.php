@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Registrar Salida</title>
     <link rel="stylesheet" href="../assets/styles/general.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../assets/styles/registrarSalida.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../assets/styles/registrarSalida.css">
@@ -32,7 +32,7 @@
         <div class="div-carros-regitrados">
             <?php
                 require '../bd/ConexionBD.php';
-                $seleccion = "SELECT id,dueno, placa, hora_entrada,horaSalida, tipo_vehiculo, espacio_asignado, persona_en_turno,tarifa FROM vista_completa";
+                $seleccion = "SELECT id,dueno, placa, hora_entrada,horaSalida, tipo_vehiculo, espacio_asignado,estado,tarifa FROM vehiculos_vista WHERE estado = 'Sin Pagar'";
                 $result_select = $conexion->query($seleccion);
 
 
@@ -47,6 +47,7 @@
                                 <th>Hora de Salida</th>
                                 <th>Tipo de Vehículo</th>
                                 <th>Espacio Asignado</th>
+                                <th>Estado</th>
                                 <th>Tarifa</th>
                             </tr>";
 
@@ -59,6 +60,7 @@
                                 <td>" . $row["horaSalida"] . "</td>
                                 <td>" . $row["tipo_vehiculo"] . "</td>
                                 <td>" . $row["espacio_asignado"] . "</td>
+                                <td>" . $row["estado"] . "</td>
                                 <td>" . $row["tarifa"] . ' '  . 'MXN' ."</td>
                                 
                             </tr>";

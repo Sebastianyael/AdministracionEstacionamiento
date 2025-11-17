@@ -53,7 +53,7 @@
         <div class="div-carros-regitrados">
             <?php
                 require '../bd/ConexionBD.php';
-                $seleccion = "SELECT id ,dueno, placa, hora_entrada, tipo_vehiculo, espacio_asignado FROM vehiculos";
+                $seleccion = "SELECT id ,dueno, placa, hora_entrada, tipo_vehiculo, espacio_asignado FROM vehiculos WHERE estado = 'Sin pagar'";
                 $result_select = $conexion->query($seleccion);
 
 

@@ -3,7 +3,7 @@
     $USERNAME = 'root';
     $PASSWORD = '';
     $DBNAME = 'estacionamiento';
-
+    $estado = 'Sin Pagar';
     $propietario = $_POST['propietario'];
     $placa = $_POST['placa'];
     $horaEntrada = $_POST['horaEntrada'];
@@ -17,8 +17,8 @@
         die("Conexion Fallida: ".$conexion->connect_error);
     }
 
-    $insertar  = "INSERT INTO vehiculos (dueno,placa,hora_entrada,tipo_vehiculo,espacio_asignado)
-    VALUES('$propietario','$placa','$horaEntrada','$tipoVehiculo','$espacioAsignado')";
+    $insertar  = "INSERT INTO vehiculos (dueno,placa,hora_entrada,tipo_vehiculo,espacio_asignado,estado)
+    VALUES('$propietario','$placa','$horaEntrada','$tipoVehiculo','$espacioAsignado','$estado')";
 
 
 if($conexion -> query($insertar) === TRUE){

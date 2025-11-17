@@ -1,0 +1,68 @@
+.formulario-historial{
+        width: 98%;
+        height: 14vh;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .formulario-historial form {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .formulario-historial input{
+        width: 20%;
+        height: 4vh;
+        padding: 5px;
+        border-radius: 10px;
+        border: 1px solid black;
+        outline: none; 
+    }
+
+    .formulario-historial input:focus{
+        border: 2px solid var(--button-color);
+    }
+
+    .enviar-Button{
+        width: 10%;
+        height: 4vh;
+        border: none;
+        border-radius: 10px;
+        background-color: var(--button-color);
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        transition: 0.4s ease all;
+    }
+
+    .enviar-Button:hover{
+        transition: 0.4s ease all;
+        transform: translateY(-7px);
+    }
+.button-historial{
+    background-color: var(--button-color);
+    color: white;
+}
+
+.ver-historial{
+    width: 98%;
+    height: 60vh;
+    overflow: scroll;
+    padding: 5px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+}
+
+.historial-container{
+    width: 98%;
+    height:77vh;
+    padding: 10px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+    overflow: scroll;
+}
