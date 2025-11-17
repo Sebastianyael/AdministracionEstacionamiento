@@ -37,6 +37,13 @@
                 Tarifas
             </button>
         </a>
+
+         <a href="../Screens/historialVehiculos.php">
+            <button type="submit" class="button button-historial">
+                <i class="fa-solid fa-clock"></i>
+                Historial
+            </button>
+        </a>
     </aside>
     
 </body>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +39,13 @@
             <button type="submit" class="button">
                 <i class="fa-solid fa-money-bill-1-wave"></i>
                 Tarifas
+            </button>
+        </a>
+
+         <a href="./Screens/historialVehiculos.php">
+            <button type="submit" class="button">
+                <i class="fa-solid fa-clock"></i>
+                Historial
             </button>
         </a>
     </aside>
