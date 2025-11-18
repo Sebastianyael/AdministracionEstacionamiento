@@ -11,6 +11,8 @@
 </head>
 <body>
     <header>
+        <img src="../assets/images/logo.png" alt="logo">
+        <h2>Dashboard</h1>
     </header>
     
 </body>

@@ -6,11 +6,13 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="./assets/styles/general.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./assets/styles/registrarEntrada.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./assets/styles/inicio.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
-
+        <img src="./assets/images/logo.png" alt="logo">
+        <h2>Dashboard</h1>
     </header>
 
     <aside>
@@ -52,6 +54,44 @@
 
     <div class="main">
         <H2>Bienvenido</H2>
+        <br>
+        <div class="options">
+
+            <a href="./Screens/registrarEntradas.php" class="ancla">
+                <div class="acceso-rapido-container">
+                    <i class="fa-solid fa-car-side"></i>
+                    <h3>Registrar Entrada</h3>
+                    <p>Registrar una nueva entrada</p>
+                </div>
+            </a>
+
+            <a href="./Screens/registrarSalidas.php" class="ancla">
+                <div class="acceso-rapido-container">
+                    <i class="fa-solid fa-car-side"></i>
+                    <h3>Registrar Salida</h3>
+                    <p>Registrar salida </p>
+                </div>
+            </a>
+
+
+            <a href="./Screens/tarifas.php" class="ancla">
+                <div class="acceso-rapido-container">
+                    <i class="fa-solid fa-money-bill-1-wave"></i>
+                    <h3>Tarifas</h3>
+                    <p>Registrar una nueva tarifa</p>
+                </div>
+            </a>
+
+            <a href="./Screens/historialVehiculos.php" class="ancla">
+                <div class="acceso-rapido-container">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>Historial</h3>
+                    <p>Vehiculos en el estacionamiento</p>
+                </div>
+            </a>
+            
+        </div>
+
     </div>  
 </body>
 </html>
