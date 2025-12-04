@@ -1,3 +1,7 @@
+<?php
+require './components/header.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-
-    </header>
+    
 
     <aside>
         <a href="./INDEX.php">
@@ -47,6 +49,24 @@
                 <i class="fa-solid fa-clock"></i>
                 Historial
             </button>
+        </a>
+         <a href="./Screens/espacios.php">
+            <button type="submit" class="button button-historial">
+           <i class="fas fa-parking"></i>
+                Espacios
+            </button>
+        </a>
+         <a href="./Screens/servicios.php">
+            <button type="submit" class="button button-historial">
+                <i class="fas fa-tint"></i>
+                Servicios
+            </button>
+        </a>
+      <a href="./Screens/horarios.php">
+        <button type="submit" class="button button-historial">
+        <i class="fas fa-calendar-alt"></i>
+          Horarios
+         </button>
         </a>
     </aside>
 

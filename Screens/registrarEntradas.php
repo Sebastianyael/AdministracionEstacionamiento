@@ -59,13 +59,15 @@
 
                 if ($result_select->num_rows > 0) {
 
-                    echo "<table border='1' cellpadding='8' cellspacing='0' style='border-collapse: collapse; text-align: center;'>
+                    echo "<table class='tabla-general'>
                             <tr>
                                 <th>Dueño</th>
                                 <th>Placa</th>
                                 <th>Hora de Entrada</th>
                                 <th>Tipo de Vehículo</th>
                                 <th>Espacio Asignado</th>
+                                <th>Actualizar</th>
+                                <th>Eliminar</th>
                                 
                             </tr>";
 
@@ -81,7 +83,7 @@
                                     
                                     <td> <input type='hidden' name='id' value='" . $row['id'] . "'> 
                                         <button type='submit'>
-                                        <i class='fa-solid fa-pencil'></i>
+                                        <i class='fa-solid fa-pencil' style='color:purple;'></i>
                                     </td>
 
                                 </form>
@@ -89,7 +91,7 @@
                                         <form action='../php/CRUDVehiculos/eliminarRegistro.php' method='post'>
                                             <input type='hidden' name='id' value='" . $row['id'] . "'>
                                             <button type='submit'>
-                                                <i class='fa-solid fa-trash'></i>
+                                                 <i class='fa-solid fa-trash' style='color:red;'></i>
                                             </button>
                                         </form>
                                     </td>

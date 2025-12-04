@@ -15,8 +15,7 @@ body{
 }
 
 header{
-    background-color: green;
-    grid-column: 1/16;
+  grid-column: 1/16;
 }
 
 aside{
@@ -76,5 +75,76 @@ h2{
 a{
     text-decoration: none;
 }
+/* ===== TABLA GENERAL  ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
 
-   
+thead th {
+    
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    background: green;
+    color: #ffffff;
+
+    height: 50px;
+}
+
+
+tbody td {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
+/* ===== INPUTS DENTRO DE TABLA (que se vean como texto normal) ===== */
+table input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-family: inherit;
+    padding: 4px 0;
+    color: #333;
+}
+
+table input:focus {
+    outline: none;
+}
+
+/* ===== ICONOS ===== */
+.btn-icon {
+    cursor: pointer;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.btn-icon:hover {
+    background-color: #eaeaea;
+}

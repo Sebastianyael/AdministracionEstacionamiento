@@ -54,6 +54,8 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+        margin-top:20px ;
+
 }
 
     .tarjeta{
@@ -65,7 +67,7 @@
         flex-direction: column;
         gap: 15px;
         border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px rgb(42, 150, 42);
         transition: 0.4s ease all;
     }
 
@@ -93,7 +95,7 @@
         height: 4vh;
         border: none;
         border-radius: 10px;
-        background-color: var(--button-color);
+        background-color:rgb(40, 128, 40);
         font-size: 13px;
         display: flex;
         justify-content: center;
