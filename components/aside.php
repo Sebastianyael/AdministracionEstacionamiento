@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="./assets/styles/general.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./assets/styles/registrarEntrada.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -43,6 +43,24 @@
                 <i class="fa-solid fa-clock"></i>
                 Historial
             </button>
+        </a>
+        <a href="../Screens/espacios.php">
+            <button type="submit" class="button button-espacios">
+           <i class="fas fa-parking"></i>
+                Espacios
+            </button>
+        </a>
+         <a href="../Screens/servicios.php">
+            <button type="submit" class="button button-servicios">
+                <i class="fas fa-tint"></i>
+                Servicios
+            </button>
+        </a>
+      <a href="../Screens/horarios.php">
+        <button type="submit" class="button button-horarios">
+        <i class="fas fa-calendar-alt"></i>
+          Horarios
+         </button>
         </a>
     </aside>
     
